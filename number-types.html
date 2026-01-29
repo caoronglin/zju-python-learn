@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字类型 | Python程序设计</title>
+    <title>2.1 数字类型 | Python程序设计</title>
     <meta name="description" content="学习Python程序设计 - 数字类型">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -17,20 +17,219 @@
                 <p class="subtitle">从入门到精通</p>
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="back-to-home">← 返回首页</a>
+                <div class="nav-section">
+                    <h3>第一章 Python语言概述</h3>
+                    <ul>
+                        <li><a href="computer-basics.html" class="nav-link">1.1 计算机基础</a></li>
+                        <li><a href="python-intro.html" class="nav-link">1.2 Python语言简介</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第二章 用Python编写程序</h3>
+                    <ul>
+                        <li><a href="number-types.html" class="active">2.1 数字类型</a></li>
+                        <li><a href="boolean-list.html" class="nav-link">2.3 布尔类型、空值和列表运算</a></li>
+                        <li><a href="assignment.html" class="nav-link">2.5 赋值语句</a></li>
+                        <li><a href="bit-operations.html" class="nav-link">2.7 Python位运算</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第三章 使用字符串、列表和元组</h3>
+                    <ul>
+                        <li><a href="list-tuple.html" class="nav-link">3.3 列表和元祖使用</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第四章 条件、循环和其他语句</h3>
+                    <ul>
+                        <li><a href="loops.html" class="nav-link">4.2 循环语句</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第五章 集合和字典</h3>
+                    <ul>
+                        <li><a href="sets.html" class="nav-link">5.1 集合</a></li>
+                        <li><a href="dict.html" class="nav-link">5.2 字典</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第六章 函数</h3>
+                    <ul>
+                        <li><a href="functions.html" class="nav-link">6.1 函数</a></li>
+                        <li><a href="namespace.html" class="nav-link">6.2 命名空间和作用域</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第七章 文件和异常</h3>
+                    <ul>
+                        <li><a href="exceptions.html" class="nav-link">7.2 异常操作</a></li>
+                        <li><a href="pandas.html" class="nav-link">7.3 pandas</a></li>
+                    </ul>
+                </div>
             </nav>
         </aside>
 
         <main class="main-content">
             <div class="content-wrapper">
                 <h1>2.1 数字类型</h1>
-                <div class="priority-badge">
-                    <span class="star">📝</span>
-                    <span class="text">本章节内容正在整理中，敬请期待...</span>
-                </div>
+
                 <section class="section">
-                    <p>本章节将详细介绍<strong>数字类型</strong>的相关知识点。</p>
-                    <p>请先学习其他章节，完整内容即将上线。</p>
+                    <h2>数据类型概述</h2>
+                    <p>计算机是用来处理数字的机器，但Python可以处理多种数据类型：</p>
+                    <ul>
+                        <li><strong>整数</strong>：可以精确处理非常大的整数</li>
+                        <li><strong>浮点数</strong>：浮点数运算都有误差，如8-2.1≠5.9</li>
+                        <li><strong>复数</strong>：由实部和虚部两部分组成的数</li>
+                        <li><strong>字符串</strong>：以单引号或双引号括起来的任意字符</li>
+                        <li><strong>布尔值</strong>：只有True和False两种类型</li>
+                        <li><strong>空值</strong>：特殊值，用None表示</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>整数类型（int）</h2>
+                    <p>Python的整数类型可以精确处理非常大的数值，没有大小限制。</p>
+
+                    <h3>不同进制的表示</h3>
+                    <p>在Python中默认使用十进制，也可以使用其他进制：</p>
+                    <ul>
+                        <li><code>0b</code>或<code>0B</code>：二进制</li>
+                        <li><code>0o</code>或<code>0O</code>：八进制</li>
+                        <li><code>0x</code>或<code>0X</code>：十六进制</li>
+                    </ul>
+
+                    <pre><code class="language-python"># 不同进制的整数
+a = 42        # 十进制
+b = 0b101010  # 二进制 (42)
+c = 0o52      # 八进制 (42)
+d = 0x2A      # 十六进制 (42)
+
+print(a, b, c, d)  # 42 42 42 42</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>算术运算符</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>运算符</th>
+                                <th>说明</th>
+                                <th>示例</th>
+                                <th>运算结果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>+</td><td>加法</td><td>1+2</td><td>3</td></tr>
+                            <tr><td>-</td><td>减法</td><td>1-2</td><td>-1</td></tr>
+                            <tr><td>*</td><td>乘法</td><td>1*2</td><td>2</td></tr>
+                            <tr><td>/</td><td>浮点数除法</td><td>1/2</td><td>0.5</td></tr>
+                            <tr><td>//</td><td>整除</td><td>7//2</td><td>3</td></tr>
+                            <tr><td>%</td><td>取模（余数）</td><td>7%2</td><td>1</td></tr>
+                            <tr><td>**</td><td>幂运算</td><td>2**3</td><td>8</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="tip">
+                        <h4>💡 运算优先级</h4>
+                        <p>幂的优先级高于乘除，乘除的优先级高于加减</p>
+                        <pre><code class="language-python">result = 2 + 3 * 4 ** 2
+print(result)  # 50
+# 计算顺序：4**2=16 → 3*16=48 → 2+48=50</code></pre>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>浮点数类型（float）</h2>
+                    <p>浮点数表示实数，用float表示。</p>
+
+                    <h3>表示方法</h3>
+                    <ol>
+                        <li>直接写：1.23、3.14</li>
+                        <li>科学计数法：1.23e9（e后面必须是整数）</li>
+                    </ol>
+
+                    <pre><code class="language-python">a = 1.23
+b = 3.14
+c = 1.23e9  # 1230000000.0
+
+print(a, b, c)</code></pre>
+
+                    <div class="tip">
+                        <h4>⚠️ 浮点数精度问题</h4>
+                        <pre><code class="language-python"># 浮点数运算的精度问题
+print(0.1 + 0.2)  # 0.30000000000000004
+print(8 - 2.1)    # 5.8999999999999995
+
+# 使用round函数处理
+print(round(0.1 + 0.2, 1))  # 0.3</code></pre>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>数学函数</h2>
+
+                    <h3>内置函数</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>函数</th>
+                                <th>说明</th>
+                                <th>示例</th>
+                                <th>输出</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>abs(x)</td><td>返回绝对值</td><td>abs(-5)</td><td>5</td></tr>
+                            <tr><td>round(x, n)</td><td>四舍五入</td><td>round(3.14159, 2)</td><td>3.14</td></tr>
+                            <tr><td>divmod(a, b)</td><td>商和余数</td><td>divmod(7, 3)</td><td>(2, 1)</td></tr>
+                            <tr><td>pow(x, y)</td><td>x的y次幂</td><td>pow(2, 3)</td><td>8</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>math模块</h3>
+                    <pre><code class="language-python">import math
+
+# 常用数学函数
+print(math.sqrt(9))      # 3.0 - 平方根
+print(math.pi)           # 3.141592653589793 - 圆周率
+print(math.e)            # 2.718281828459045 - 欧拉数
+print(math.sin(math.pi/2))  # 1.0 - 正弦
+print(math.cos(0))       # 1.0 - 余弦
+print(math.log(math.e))  # 1.0 - 自然对数
+print(math.ceil(2.3))    # 3 - 向上取整
+print(math.floor(2.7))   # 2 - 向下取整</code></pre>
+
+                    <h3>random模块</h3>
+                    <pre><code class="language-python">import random
+
+print(random.randint(1, 10))  # 1-10随机整数
+print(random.uniform(0, 1))   # 0-1随机浮点数
+print(random.random())        # 0.0-1.0随机浮点数</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>复数类型（complex）</h2>
+                    <p>复数由实部和虚部（j）组成。</p>
+
+                    <pre><code class="language-python">a = 3 + 4j
+b = complex(3, 4)
+
+print(a)          # (3+4j)
+print(a.real)     # 3.0 - 实部
+print(a.imag)     # 4.0 - 虚部
+print(a.conjugate())  # (3-4j) - 共轭复数</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>总结</h2>
+                    <p>本节介绍了Python的数字类型：</p>
+                    <ul>
+                        <li><strong>整数</strong>：精确表示大整数，支持多种进制</li>
+                        <li><strong>浮点数</strong>：注意精度问题</li>
+                        <li><strong>复数</strong>：支持复数运算</li>
+                        <li><strong>数学函数</strong>：内置函数、math模块、random模块</li>
+                    </ul>
                 </section>
             </div>
         </main>
