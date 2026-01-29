@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>列表和元祖使用 | Python程序设计</title>
-    <meta name="description" content="学习Python程序设计 - 列表和元祖使用">
+    <title>3.3 列表和元祖使用 | Python程序设计</title>
+    <meta name="description" content="学习Python列表和元组的使用方法、区别和应用场景">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="icon" href="favicon.ico">
@@ -17,20 +17,427 @@
                 <p class="subtitle">从入门到精通</p>
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="back-to-home">← 返回首页</a>
+                <div class="nav-section">
+                    <h3>第一章 Python语言概述</h3>
+                    <ul>
+                        <li><a href="computer-basics.html" class="nav-link">1.1 计算机基础</a></li>
+                        <li><a href="python-intro.html" class="nav-link">1.2 Python语言简介</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第二章 用Python编写程序</h3>
+                    <ul>
+                        <li><a href="number-types.html" class="nav-link">2.1 数字类型</a></li>
+                        <li><a href="boolean-list.html" class="nav-link">2.3 布尔类型、空值和列表运算</a></li>
+                        <li><a href="assignment.html" class="nav-link">2.5 赋值语句</a></li>
+                        <li><a href="bit-operations.html" class="nav-link">2.7 Python位运算</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第三章 使用字符串、列表和元组</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link">3.1 序列的访问及运算符</a></li>
+                        <li><a href="#" class="nav-link">3.2 字符串使用</a></li>
+                        <li><a href="list-tuple.html" class="active">3.3 列表和元祖使用</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第四章 条件、循环和其他语句</h3>
+                    <ul>
+                        <li><a href="loops.html" class="nav-link">4.2 循环语句</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第五章 集合和字典</h3>
+                    <ul>
+                        <li><a href="sets.html" class="nav-link">5.1 集合</a></li>
+                        <li><a href="dict.html" class="nav-link">5.2 字典</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第六章 函数</h3>
+                    <ul>
+                        <li><a href="functions.html" class="nav-link">6.1 函数</a></li>
+                        <li><a href="namespace.html" class="nav-link">6.2 命名空间和作用域</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第七章 文件和异常</h3>
+                    <ul>
+                        <li><a href="exceptions.html" class="nav-link">7.2 异常操作</a></li>
+                        <li><a href="pandas.html" class="nav-link">7.3 pandas</a></li>
+                    </ul>
+                </div>
             </nav>
         </aside>
 
         <main class="main-content">
             <div class="content-wrapper">
                 <h1>3.3 列表和元祖使用</h1>
-                <div class="priority-badge">
-                    <span class="star">📝</span>
-                    <span class="text">本章节内容正在整理中，敬请期待...</span>
-                </div>
+
                 <section class="section">
-                    <p>本章节将详细介绍<strong>列表和元祖使用</strong>的相关知识点。</p>
-                    <p>请先学习其他章节，完整内容即将上线。</p>
+                    <h2>一、什么是列表和元组</h2>
+
+                    <h3>1. 列表（List）</h3>
+                    <p>列表是Python中最常用的数据结构之一，是一个<strong>有序的、可变的</strong>集合，可以存储任意类型的元素。</p>
+
+                    <h4>特点</h4>
+                    <ul>
+                        <li>使用方括号<code>[]</code>定义</li>
+                        <li>元素之间用逗号分隔</li>
+                        <li><strong>可变性</strong>：列表中的元素可以随时修改、添加或删除</li>
+                        <li><strong>有序性</strong>：元素按照插入顺序排列，可以通过索引访问</li>
+                        <li><strong>异构性</strong>：可以包含不同类型的元素</li>
+                        <li><strong>动态性</strong>：长度可变，可以随时增删元素</li>
+                    </ul>
+
+                    <h4>创建方式</h4>
+                    <pre><code class="language-python"># 创建列表
+list1 = []                          # 空列表
+list2 = [1, 2, 3]                   # 数字列表
+list3 = ['a', 'b', 'c']             # 字符串列表
+list4 = [1, 'hello', 3.14, True]    # 混合类型
+list5 = list('Python')              # 从字符串创建
+list6 = [x for x in range(5)]       # 列表推导式</code></pre>
+
+                    <h3>2. 元组（Tuple）</h3>
+                    <p>元组是Python中的另一种数据结构，是一个<strong>有序的、不可变的</strong>集合，可以存储任意类型的元素。</p>
+
+                    <h4>特点</h4>
+                    <ul>
+                        <li>使用圆括号<code>()</code>定义</li>
+                        <li>元素之间用逗号分隔</li>
+                        <li><strong>不可变性</strong>：元组一旦创建，其元素不能修改、添加或删除</li>
+                        <li><strong>有序性</strong>：元素按照插入顺序排列，可以通过索引访问</li>
+                        <li><strong>异构性</strong>：可以包含不同类型的元素</li>
+                        <li><strong>静态性</strong>：长度固定，不能增删元素</li>
+                    </ul>
+
+                    <h4>创建方式</h4>
+                    <pre><code class="language-python"># 创建元组
+tuple1 = ()                          # 空元组
+tuple2 = (1, 2, 3)                   # 数字元组
+tuple3 = ('a', 'b', 'c')             # 字符串元组
+tuple4 = (1,)                        # 单元素元组（注意逗号）
+tuple5 = 1, 2, 3                     # 不用括号也可以
+tuple6 = tuple('Python')             # 从字符串创建</code></pre>
+
+                    <div class="tip">
+                        <h4>⚠️ 单元素元组的陷阱</h4>
+                        <pre><code class="language-python"># 错误：这不是元组，是括号表达式
+not_tuple = (1)
+print(type(not_tuple))  # <class 'int'>
+
+# 正确：单元素元组需要逗号
+is_tuple = (1,)
+print(type(is_tuple))   # <class 'tuple'></code></pre>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>二、列表的常用方法</h2>
+
+                    <h3>1. 添加元素</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                                <th>示例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>append(x)</td><td>在列表末尾添加单个元素</td><td>list.append(4)</td></tr>
+                            <tr><td>insert(i, x)</td><td>在指定位置插入元素</td><td>list.insert(1, 'new')</td></tr>
+                            <tr><td>extend(iterable)</td><td>在末尾添加可迭代对象的所有元素</td><td>list.extend([5, 6])</td></tr>
+                            <tr><td>+ 运算符</td><td>连接两个列表</td><td>new_list = list1 + list2</td></tr>
+                        </tbody>
+                    </table>
+
+                    <pre><code class="language-python">fruits = ['apple', 'banana']
+fruits.append('cherry')           # ['apple', 'banana', 'cherry']
+fruits.insert(1, 'orange')        # ['apple', 'orange', 'banana', 'cherry']
+fruits.extend(['grape', 'mango']) # ['apple', 'orange', 'banana', 'cherry', 'grape', 'mango']
+
+# 注意：append和extend的区别
+list1 = [1, 2, 3]
+list2 = [4, 5]
+list1.append(list2)  # [1, 2, 3, [4, 5]] - 添加整个列表
+list1.extend(list2)  # [1, 2, 3, [4, 5], 4, 5] - 展开添加</code></pre>
+
+                    <h3>2. 删除元素</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                                <th>示例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>remove(x)</td><td>删除第一个匹配的元素</td><td>list.remove('a')</td></tr>
+                            <tr><td>pop([i])</td><td>删除并返回指定位置的元素</td><td>list.pop(0)</td></tr>
+                            <tr><td>clear()</td><td>清空列表中的所有元素</td><td>list.clear()</td></tr>
+                            <tr><td>del 语句</td><td>删除指定位置的元素或整个列表</td><td>del list[0]</td></tr>
+                        </tbody>
+                    </table>
+
+                    <pre><code class="language-python">fruits = ['apple', 'banana', 'cherry', 'banana']
+fruits.remove('banana')  # 删除第一个'banana'
+fruits.pop(0)           # 删除并返回'apple'
+fruits.pop()            # 删除最后一个元素
+fruits.clear()          # 清空列表</code></pre>
+
+                    <h3>3. 查找和访问元素</h3>
+                    <pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
+
+# 索引访问
+print(fruits[0])     # 'apple'
+print(fruits[-1])    # 'cherry'
+
+# 切片
+print(fruits[1:3])   # ['banana', 'cherry']
+
+# 查找方法
+print(fruits.index('banana'))  # 1
+print(fruits.count('apple'))   # 1
+
+# 内置函数
+print(len(fruits))    # 3
+print(max(fruits))    # 'cherry'
+print(min(fruits))    # 'apple'</code></pre>
+
+                    <h3>4. 排序和反转</h3>
+                    <pre><code class="language-python">numbers = [3, 1, 4, 1, 5, 9]
+
+# 原地排序
+numbers.sort()                # [1, 1, 3, 4, 5, 9]
+numbers.sort(reverse=True)    # [9, 5, 4, 3, 1, 1]
+
+# 反转
+numbers.reverse()              # [1, 1, 3, 4, 5, 9]
+
+# 返回新列表（不修改原列表）
+sorted_numbers = sorted(numbers)       # [1, 1, 3, 4, 5, 9]
+reversed_numbers = list(reversed(numbers))  # [9, 5, 4, 3, 1, 1]</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>三、列表推导式</h2>
+                    <p>列表推导式是创建列表的简洁方式。</p>
+
+                    <h3>基本语法</h3>
+                    <pre><code class="language-python">[expression for item in iterable if condition]</code></pre>
+
+                    <h3>示例</h3>
+                    <pre><code class="language-python"># 创建平方数列表
+squares = [x**2 for x in range(10)]
+# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# 带条件的列表推导式
+even_squares = [x**2 for x in range(10) if x % 2 == 0]
+# [0, 4, 16, 36, 64]
+
+# 嵌套列表推导式
+matrix = [[i*j for j in range(3)] for i in range(3)]
+# [[0, 0, 0], [0, 1, 2], [0, 2, 4]]</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>四、元组的常用方法</h2>
+                    <p>由于元组是不可变的，其方法相对较少，主要集中在查询和访问方面。</p>
+
+                    <h3>1. 查找和访问元素</h3>
+                    <pre><code class="language-python">tup = ('a', 'b', 'c', 'a')
+
+# 索引和切片（与列表相同）
+print(tup[0])      # 'a'
+print(tup[1:3])    # ('b', 'c')
+
+# 查找方法
+print(tup.index('b'))  # 1
+print(tup.count('a'))  # 2
+
+# 内置函数
+print(len(tup))    # 4
+print(max(tup))    # 'c'
+print(min(tup))    # 'a'</code></pre>
+
+                    <h3>2. 元组解包</h3>
+                    <pre><code class="language-python"># 基本解包
+a, b, c = (1, 2, 3)
+print(a, b, c)  # 1 2 3
+
+# 使用*解包
+first, *rest, last = (1, 2, 3, 4, 5)
+print(first)  # 1
+print(rest)   # [2, 3, 4]
+print(last)   # 5</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>五、列表和元组的区别</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>列表（List）</th>
+                                <th>元组（Tuple）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>可变性</td>
+                                <td>可变：可以修改、添加、删除元素</td>
+                                <td>不可变：创建后不能修改元素</td>
+                            </tr>
+                            <tr>
+                                <td>语法</td>
+                                <td>使用方括号 []</td>
+                                <td>使用圆括号 ()</td>
+                            </tr>
+                            <tr>
+                                <td>性能</td>
+                                <td>创建和修改较慢，占用内存较多</td>
+                                <td>创建和访问较快，占用内存较少</td>
+                            </tr>
+                            <tr>
+                                <td>方法</td>
+                                <td>丰富的方法集（增删改查）</td>
+                                <td>有限的方法集（主要是查询）</td>
+                            </tr>
+                            <tr>
+                                <td>用途</td>
+                                <td>适合需要修改的数据集合</td>
+                                <td>适合固定的数据集合</td>
+                            </tr>
+                            <tr>
+                                <td>哈希</td>
+                                <td>不可哈希，不能作为字典的键</td>
+                                <td>可哈希，可以作为字典的键</td>
+                            </tr>
+                            <tr>
+                                <td>内存</td>
+                                <td>动态分配内存，需要额外空间</td>
+                                <td>静态分配内存，更节省空间</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>性能差异</h3>
+                    <pre><code class="language-python">import sys
+
+list_example = [1, 2, 3, 'a', 'b', 'c']
+tuple_example = (1, 2, 3, 'a', 'b', 'c')
+
+print(f"列表大小: {sys.getsizeof(list_example)} 字节")
+print(f"元组大小: {sys.getsizeof(tuple_example)} 字节")</code></pre>
+
+                    <div class="tip">
+                        <h4>💡 性能建议</h4>
+                        <p>元组比列表有更好的性能表现，特别是在性能敏感的场景中。</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>六、列表和元组的使用场景</h2>
+
+                    <h3>1. 使用列表的场景</h3>
+                    <ul>
+                        <li><strong>需要修改数据时</strong>：当数据集合需要频繁修改时</li>
+                        <li><strong>动态数据集合</strong>：当数据集合的大小会变化时</li>
+                        <li><strong>栈和队列实现</strong>：列表适合实现栈（append/pop）和队列</li>
+                        <li><strong>临时数据存储</strong>：当数据只是临时使用，不需要长期保存时</li>
+                        <li><strong>需要丰富操作时</strong>：当需要对数据集合进行排序、反转等操作时</li>
+                    </ul>
+
+                    <pre><code class="language-python"># 示例：动态添加数据
+shopping_list = []
+shopping_list.append('milk')
+shopping_list.append('bread')
+shopping_list.append('eggs')
+print(shopping_list)</code></pre>
+
+                    <h3>2. 使用元组的场景</h3>
+                    <ul>
+                        <li><strong>固定数据集合</strong>：当数据集合创建后不需要修改时</li>
+                        <li><strong>字典键</strong>：元组可以作为字典的键，而列表不能</li>
+                        <li><strong>函数返回多值</strong>：函数返回多个值时通常使用元组</li>
+                        <li><strong>数据保护</strong>：当需要确保数据不被意外修改时</li>
+                        <li><strong>性能敏感场景</strong>：当性能是重要考虑因素时</li>
+                        <li><strong>多线程编程</strong>：元组的不可变性使其在多线程环境中更安全</li>
+                    </ul>
+
+                    <pre><code class="language-python"># 示例：函数返回多值
+def get_user_info(user_id):
+    # 模拟数据库查询
+    return ('Alice', 25, 'alice@example.com')
+
+name, age, email = get_user_info(1)
+print(f"{name}, {age}岁, {email}")</code></pre>
+
+                    <h3>3. 混合使用场景</h3>
+                    <pre><code class="language-python"># 配置参数使用元组（不可变）
+CONFIG = ('localhost', 8080, True)
+
+# 动态数据使用列表（可变）
+users = []
+
+# 元组作为字典的键
+coordinates = {}
+coordinates[(0, 0)] = '起点'
+coordinates[(1, 1)] = '终点'</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>七、常见操作总结</h2>
+
+                    <h3>1. 索引和切片</h3>
+                    <pre><code class="language-python"># 正索引
+seq = [0, 1, 2, 3, 4]
+print(seq[0])   # 第一个元素
+print(seq[-1])  # 最后一个元素
+
+# 切片
+print(seq[1:4])   # [1, 2, 3]
+print(seq[:3])    # [0, 1, 2]
+print(seq[2:])    # [2, 3, 4]
+print(seq[::2])   # [0, 2, 4]（步长为2）</code></pre>
+
+                    <h3>2. 序列运算符</h3>
+                    <pre><code class="language-python"># 拼接
+list1 = [1, 2]
+list2 = [3, 4]
+print(list1 + list2)  # [1, 2, 3, 4]
+
+# 重复
+print(list1 * 3)  # [1, 2, 1, 2, 1, 2]
+
+# 成员检查
+print(2 in list1)   # True
+print(5 in list1)   # False</code></pre>
+
+                    <h3>3. 内置函数</h3>
+                    <pre><code class="language-python">seq = [3, 1, 4, 1, 5, 9]
+
+print(len(seq))    # 6 - 长度
+print(max(seq))    # 9 - 最大值
+print(min(seq))    # 1 - 最小值
+print(sum(seq))    # 23 - 求和
+print(sorted(seq)) # [1, 1, 3, 4, 5, 9] - 排序</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>总结</h2>
+                    <p>列表和元组是Python中最基础的数据结构：</p>
+                    <ul>
+                        <li><strong>列表</strong>：可变、灵活、方法丰富，适合需要修改的数据</li>
+                        <li><strong>元组</strong>：不可变、高效、安全，适合固定的数据</li>
+                        <li><strong>选择依据</strong>：根据是否需要修改、性能要求、使用场景来选择</li>
+                        <li><strong>共同操作</strong>：索引、切片、序列运算符、内置函数</li>
+                    </ul>
+                    <p>理解它们的区别和适用场景，能够帮助我们编写更高效、更安全的Python代码。</p>
                 </section>
             </div>
         </main>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>循环语句 | Python程序设计</title>
-    <meta name="description" content="学习Python程序设计 - 循环语句">
+    <title>4.2 循环语句 | Python程序设计</title>
+    <meta name="description" content="学习Python循环语句：for循环、while循环、循环控制">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="icon" href="favicon.ico">
@@ -17,20 +17,372 @@
                 <p class="subtitle">从入门到精通</p>
             </div>
             <nav class="sidebar-nav">
-                <a href="index.html" class="back-to-home">← 返回首页</a>
+                <div class="nav-section">
+                    <h3>第一章 Python语言概述</h3>
+                    <ul>
+                        <li><a href="computer-basics.html" class="nav-link">1.1 计算机基础</a></li>
+                        <li><a href="python-intro.html" class="nav-link">1.2 Python语言简介</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第二章 用Python编写程序</h3>
+                    <ul>
+                        <li><a href="number-types.html" class="nav-link">2.1 数字类型</a></li>
+                        <li><a href="boolean-list.html" class="nav-link">2.3 布尔类型、空值和列表运算</a></li>
+                        <li><a href="assignment.html" class="nav-link">2.5 赋值语句</a></li>
+                        <li><a href="bit-operations.html" class="nav-link">2.7 Python位运算</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第三章 使用字符串、列表和元组</h3>
+                    <ul>
+                        <li><a href="list-tuple.html" class="nav-link">3.3 列表和元祖使用</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第四章 条件、循环和其他语句</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link">4.1 条件语句</a></li>
+                        <li><a href="loops.html" class="active">4.2 循环语句</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第五章 集合和字典</h3>
+                    <ul>
+                        <li><a href="sets.html" class="nav-link">5.1 集合</a></li>
+                        <li><a href="dict.html" class="nav-link">5.2 字典</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第六章 函数</h3>
+                    <ul>
+                        <li><a href="functions.html" class="nav-link">6.1 函数</a></li>
+                        <li><a href="namespace.html" class="nav-link">6.2 命名空间和作用域</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>第七章 文件和异常</h3>
+                    <ul>
+                        <li><a href="exceptions.html" class="nav-link">7.2 异常操作</a></li>
+                        <li><a href="pandas.html" class="nav-link">7.3 pandas</a></li>
+                    </ul>
+                </div>
             </nav>
         </aside>
 
         <main class="main-content">
             <div class="content-wrapper">
                 <h1>4.2 循环语句</h1>
-                <div class="priority-badge">
-                    <span class="star">📝</span>
-                    <span class="text">本章节内容正在整理中，敬请期待...</span>
-                </div>
+
                 <section class="section">
-                    <p>本章节将详细介绍<strong>循环语句</strong>的相关知识点。</p>
-                    <p>请先学习其他章节，完整内容即将上线。</p>
+                    <h2>循环语句的基本概念</h2>
+                    <p>循环是编程中最基本也是最重要的控制结构之一，它允许代码重复执行，直到满足特定的条件为止。Python提供了两种主要的循环结构：<strong>for循环</strong>和<strong>while循环</strong>。</p>
+                </section>
+
+                <section class="section">
+                    <h2>一、for循环</h2>
+                    <p>for循环是Python中最常用的循环结构，用于遍历任何序列（如列表、元组、字符串）或其他可迭代对象。</p>
+
+                    <h3>基本语法</h3>
+                    <pre><code class="language-python">for variable in sequence:
+    # 循环体
+    pass</code></pre>
+
+                    <h3>基本用法</h3>
+                    <pre><code class="language-python"># 遍历列表
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+
+# 遍历字符串
+for char in "Python":
+    print(char)
+
+# 遍历范围
+for i in range(5):
+    print(i)  # 输出：0, 1, 2, 3, 4</code></pre>
+
+                    <h3>通过序列索引迭代</h3>
+                    <pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
+for index in range(len(fruits)):
+    print(f"索引 {index}: {fruits[index]}")</code></pre>
+
+                    <h3>使用enumerate()获取索引和值</h3>
+                    <pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
+for index, fruit in enumerate(fruits):
+    print(f"索引 {index}: {fruit}")
+
+# 输出：
+# 索引 0: apple
+# 索引 1: banana
+# 索引 2: cherry</code></pre>
+
+                    <div class="tip">
+                        <h4>💡 enumerate()的优势</h4>
+                        <p>使用<code>enumerate()</code>比使用<code>range(len())</code>更加Pythonic，代码更简洁易读。</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>二、while循环</h2>
+                    <p>while循环在条件为True时重复执行代码块，当条件变为False时停止。</p>
+
+                    <h3>基本语法</h3>
+                    <pre><code class="language-python">while condition:
+    # 循环体
+    pass</code></pre>
+
+                    <h3>基本用法</h3>
+                    <pre><code class="language-python"># 计数器
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# 输出：0, 1, 2, 3, 4</code></pre>
+
+                    <h3>无限循环</h3>
+                    <pre><code class="language-python"># 注意：确保有退出条件
+while True:
+    user_input = input("输入'quit'退出：")
+    if user_input == 'quit':
+        break</code></pre>
+
+                    <div class="tip">
+                        <h4>⚠️ 避免无限循环</h4>
+                        <p>使用while循环时，务必确保循环条件最终会变为False，否则会造成无限循环。</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>三、循环控制语句</h2>
+                    <p>Python提供了三个循环控制语句：<code>break</code>、<code>continue</code>和<code>pass</code>，用于控制循环的执行流程。</p>
+
+                    <h3>1. break语句</h3>
+                    <p>break语句用于立即终止整个循环，跳出循环体。</p>
+
+                    <pre><code class="language-python"># 查找列表中的第一个偶数
+numbers = [1, 3, 5, 4, 7, 9]
+for num in numbers:
+    if num % 2 == 0:
+        print(f"找到偶数：{num}")
+        break
+
+# 输出：找到偶数：4</code></pre>
+
+                    <h3>2. continue语句</h3>
+                    <p>continue语句用于跳过当前循环的剩余语句，直接进入下一次循环。</p>
+
+                    <pre><code class="language-python"># 打印奇数
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
+
+# 输出：1, 3, 5, 7, 9</code></pre>
+
+                    <h3>3. pass语句</h3>
+                    <p>pass是空语句，不做任何事情，一般用作占位符，保持程序结构的完整性。</p>
+
+                    <pre><code class="language-python"># 占位符示例
+for i in range(5):
+    pass  # TODO: 稍后实现</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>四、循环的else语句</h2>
+                    <p>Python中的循环可以带有一个else子句，它在循环正常结束（即不是通过break跳出）时执行。</p>
+
+                    <h3>1. for...else语句</h3>
+                    <pre><code class="language-python"># 查找质数
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(f"{n} 等于 {x} * {n//x}")
+            break
+    else:
+        # 没有找到因数
+        print(f"{n} 是质数")</code></pre>
+
+                    <h3>2. while...else语句</h3>
+                    <pre><code class="language-python">count = 0
+while count < 5:
+    print(count)
+    count += 1
+else:
+    print("循环正常结束")</code></pre>
+
+                    <div class="tip">
+                        <h4>💡 else语句的执行时机</h4>
+                        <p>else子句只在循环正常结束时执行，如果循环被break终止，则不会执行else子句。</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>五、列表推导式</h2>
+                    <p>列表推导式是Python中创建列表的简洁方式，它可以将for循环和if语句结合在一行代码中。</p>
+
+                    <h3>基本语法</h3>
+                    <pre><code class="language-python">[expression for item in iterable if condition]</code></pre>
+
+                    <h3>基本用法</h3>
+                    <pre><code class="language-python"># 创建平方数列表
+squares = [x**2 for x in range(10)]
+print(squares)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# 带条件的列表推导式
+even_squares = [x**2 for x in range(10) if x % 2 == 0]
+print(even_squares)  # [0, 4, 16, 36, 64]</code></pre>
+
+                    <h3>性能特点</h3>
+                    <ul>
+                        <li><strong>立即计算</strong>：列表推导式是Eager Loading，所有元素在创建时立即计算并存储在内存中</li>
+                        <li><strong>适合场景</strong>：需要多次迭代、数据集较小、需要随机访问</li>
+                        <li><strong>内存考虑</strong>：对于大数据集可能会消耗大量内存</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>六、生成器表达式</h2>
+                    <p>生成器表达式与列表推导式类似，但它使用圆括号而不是方括号，返回的是一个生成器对象。</p>
+
+                    <h3>基本语法</h3>
+                    <pre><code class="language-python">(expression for item in iterable if condition)</code></pre>
+
+                    <h3>基本用法</h3>
+                    <pre><code class="language-python"># 生成器表达式
+squares_gen = (x**2 for x in range(10))
+print(squares_gen)  # <generator object <genexpr> at 0x...>
+
+# 遍历生成器
+for square in squares_gen:
+    print(square)</code></pre>
+
+                    <h3>性能特点</h3>
+                    <ul>
+                        <li><strong>惰性计算</strong>：Lazy Loading，元素只在需要时才生成</li>
+                        <li><strong>内存效率</strong>：占用内存少，适合大数据集</li>
+                        <li><strong>单次使用</strong>：只能迭代一次，不能重复使用</li>
+                    </ul>
+
+                    <h3>列表推导式 vs 生成器表达式</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>列表推导式</th>
+                                <th>生成器表达式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>语法</td><td>[]</td><td>()</td></tr>
+                            <tr><td>计算方式</td><td>立即计算</td><td>惰性计算</td></tr>
+                            <tr><td>内存使用</td><td>存储所有元素</td><td>按需生成</td></tr>
+                            <tr><td>可重复使用</td><td>可以多次迭代</td><td>只能迭代一次</td></tr>
+                            <tr><td>随机访问</td><td>支持索引访问</td><td>不支持</td></tr>
+                            <tr><td>适用场景</td><td>小数据集</td><td>大数据集</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="section">
+                    <h2>七、循环的嵌套</h2>
+                    <p>Python允许在一个循环体内嵌套另一个循环，这称为循环的嵌套。</p>
+
+                    <h3>1. for循环嵌套</h3>
+                    <pre><code class="language-python"># 打印乘法表
+for i in range(1, 10):
+    for j in range(1, i + 1):
+        print(f"{j}x{i}={i*j}", end=" ")
+    print()</code></pre>
+
+                    <h3>2. while循环嵌套</h3>
+                    <pre><code class="language-python"># 打印矩形
+i = 0
+while i < 5:
+    j = 0
+    while j < 10:
+        print("*", end=" ")
+        j += 1
+    print()
+    i += 1</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>八、循环的最佳实践</h2>
+
+                    <div class="tip">
+                        <h4>💡 使用enumerate()获取索引</h4>
+                        <pre><code class="language-python"># 推荐
+for index, item in enumerate(items):
+    print(index, item)</code></pre>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 使用zip()同时迭代多个序列</h4>
+                        <pre><code class="language-python">names = ['Alice', 'Bob', 'Charlie']
+ages = [25, 30, 35]
+
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old")</code></pre>
+                    </div>
+
+                    <div class="tip">
+                        <h4>💡 避免在循环中修改被迭代的对象</h4>
+                        <pre><code class="language-python"># 错误：在循环中修改列表
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    if num % 2 == 0:
+        numbers.remove(num)  # 可能导致跳过元素
+
+# 正确：创建新列表或使用列表推导式
+numbers = [1, 2, 3, 4, 5]
+numbers = [num for num in numbers if num % 2 != 0]</code></pre>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>九、循环的常见应用场景</h2>
+
+                    <h3>1. 数据处理</h3>
+                    <pre><code class="language-python"># 计算列表平均值
+numbers = [1, 2, 3, 4, 5]
+total = 0
+for num in numbers:
+    total += num
+average = total / len(numbers)
+print(f"平均值：{average}")</code></pre>
+
+                    <h3>2. 文件处理</h3>
+                    <pre><code class="language-python"># 逐行读取文件
+with open('data.txt', 'r') as f:
+    for line in f:
+        print(line.strip())</code></pre>
+
+                    <h3>3. 算法实现</h3>
+                    <pre><code class="language-python"># 冒泡排序
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr</code></pre>
+                </section>
+
+                <section class="section">
+                    <h2>总结</h2>
+                    <p>本节介绍了Python的循环语句：</p>
+                    <ul>
+                        <li><strong>for循环</strong>：遍历序列或可迭代对象</li>
+                        <li><strong>while循环</strong>：基于条件的循环</li>
+                        <li><strong>循环控制</strong>：break、continue、pass</li>
+                        <li><strong>循环else子句</strong>：循环正常结束时执行</li>
+                        <li><strong>列表推导式</strong>：简洁创建列表</li>
+                        <li><strong>生成器表达式</strong>：惰性计算，节省内存</li>
+                        <li><strong>循环嵌套</strong>：多重循环</li>
+                    </ul>
+                    <p>掌握循环是编程的基础，合理使用循环可以简化代码，提高效率。</p>
                 </section>
             </div>
         </main>
