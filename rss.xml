@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python程序设计教程</title>
+    <link>https://caoronglin.github.io/zju-python-learn/</link>
+    <description>系统学习Python程序设计，从基础语法到高级特性</description>
+    <language>zh-CN</language>
+    <atom:link href="https://caoronglin.github.io/zju-python-learn/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>1.1 计算机基础</title>
+      <link>https://caoronglin.github.io/zju-python-learn/computer-basics.html</link>
+      <description>了解计算机的基本特点、数制转换、字符编码等基础知识</description>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://caoronglin.github.io/zju-python-learn/computer-basics.html</guid>
+    </item>
+    <item>
+      <title>1.2 Python语言简介</title>
+      <link>https://caoronglin.github.io/zju-python-learn/python-intro.html</link>
+      <description>学习Python的运算符优先级、结合性和基本语法规则</description>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://caoronglin.github.io/zju-python-learn/python-intro.html</guid>
+    </item>
+    <item>
+      <title>2.1 数字类型</title>
+      <link>https://caoronglin.github.io/zju-python-learn/number-types.html</link>
+      <description>掌握整数、浮点数、复数的使用方法和数学运算函数</description>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://caoronglin.github.io/zju-python-learn/number-types.html</guid>
+    </item>
+  </channel>
+</rss>
